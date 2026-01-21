@@ -1,190 +1,234 @@
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>José Antonio Moreno Portfolio </title> 
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload homepage">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>José Antonio Moreno | Portfolio</title>
+    <meta name="description" content="Portfolio of José Antonio Moreno, a Game Developer" />
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-						<!-- Logo 
-							<div id="logo">
-								<h1><a href="index.html">José</a></h1>
-								<span>by HTML5 UP</span>
-							</div>-->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            colors: {
+              primary: '#3b82f6',
+              secondary: '#8b5cf6',
+              dark: '#020617',
+              card: '#0f172a',
+            },
+            animation: {
+              'blob': 'blob 10s infinite',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -30px) scale(1.05)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020617;
+        color: #f8fafc;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #020617; }
+      ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #334155; }
+      
+      /* Glass Utility Class */
+      .glass {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-dark min-h-screen text-slate-200 font-sans selection:bg-primary/30 selection:text-white">
+    
+    <!-- Background Animated Blobs (Subtle) -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-1/2 right-0 w-80 h-80 bg-secondary/10 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob" style="animation-delay: 2s"></div>
+    </div>
 
-						<!-- Nav 
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="index.html">Welcome</a></li>
-									<li>
-										<a href="#">Dropdown</a>
-										<ul>
-											<li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li>
-												<a href="#">Phasellus consequat</a>
-												<ul>
-													<li><a href="#">Lorem ipsum dolor</a></li>
-													<li><a href="#">Phasellus consequat</a></li>
-													<li><a href="#">Magna phasellus</a></li>
-													<li><a href="#">Etiam dolore nisl</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>
-									</li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-								</ul>
-							</nav>
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+        
+        <!-- Banner Section (Compact Hero) -->
+        <header class="text-center space-y-4 py-8 animate-fade-in">
+            <!-- Icon -->
+            <div class="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-secondary p-3 rounded-2xl mb-6 shadow-xl shadow-primary/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="17" x2="17.01" y1="11" y2="11"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 12v-2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2"/><path d="M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-display font-bold text-white tracking-tight">
+                I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-500">José Antonio Moreno</span>
+            </h1>
+            <p class="text-slate-400 text-xl">These are some of my works</p>
+        </header>
 
-					</header>
-				</div>
-				-->
+        <!-- Featured Projects Row (2 Columns) -->
+        <section id="featured" class="animate-fade-in" style="animation-delay: 0.1s">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-px bg-slate-800 flex-1"></div>
+                <h2 class="text-3xl font-display font-bold text-white tracking-tight">Featured Works</h2>
+                <div class="h-px bg-slate-800 flex-1"></div>
+            </div>
 
-			<!-- Banner -->
-				<div id="banner-wrapper">
-					<div id="banner" class="box container">
-						<div class="row">
-							<div class="col-10 col-12-medium">
-								<h2>I'm José Antonio Moreno</h2>
-								<p>These are some of my works</p>
-							</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-900/50 rounded-xl overflow-hidden border border-slate-800 hover:border-slate-700 transition-all hover:shadow-lg hover:shadow-primary/5 group flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-60"></div>
+                        <img src="images/go-on.png" alt="GO-ON" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <span class="absolute top-3 left-3 z-20 px-2.5 py-1 bg-slate-900/90 text-xs font-bold text-white uppercase rounded border border-slate-700">Android Game</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-primary transition-colors">GO-ON</h3>
+                        <p class="text-sm text-slate-400 mb-4">Hyper Casual mobile game made with Unity</p>
+                        <p class="text-base text-slate-300 leading-relaxed mb-6 flex-grow">GoOn is an Hyper Casual 2D game for Android with 21 different levels. I handled programming, game design, and visuals.</p>
+                        <div class="flex flex-wrap gap-3 mt-auto">
+                            <a href="https://www.youtube.com/watch?v=HK5iRJ4nj-s" target="_blank" class="flex-1 bg-slate-800 hover:bg-red-600/90 hover:text-white text-white/90 text-center px-4 py-3 rounded-lg transition-all font-bold text-base flex items-center justify-center gap-2 group/btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 
+                                Trailer
+                            </a>
+                            <a href="https://marti-mayolas.itch.io/go-on" target="_blank" class="flex-1 bg-slate-800 hover:bg-orange-600/90 hover:text-white text-white/90 text-center px-4 py-3 rounded-lg transition-all font-bold text-base flex items-center justify-center gap-2 group/btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> 
+                                Itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-						</div>
-					</div>
-				</div>
+                <!-- Project 2 -->
+                <div class="bg-slate-900/50 rounded-xl overflow-hidden border border-slate-800 hover:border-slate-700 transition-all hover:shadow-lg hover:shadow-primary/5 group flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-60"></div>
+                        <img src="images/waterodyssey.png" alt="The Water Odyssey" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <span class="absolute top-3 left-3 z-20 px-2.5 py-1 bg-slate-900/90 text-xs font-bold text-white uppercase rounded border border-slate-700">Windows Game</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2 group-hover:text-primary transition-colors">The Water Odyssey</h3>
+                        <p class="text-sm text-slate-400 mb-4">Roguelike game made with Unity</p>
+                        <p class="text-base text-slate-300 leading-relaxed mb-6 flex-grow">An action 3D shooting game with roguelike mechanics. Developed using Agile methodologies (Scrum/Jira).</p>
+                        <div class="flex flex-wrap gap-3 mt-auto">
+                            <a href="https://youtu.be/E3VorUXMKJU" target="_blank" class="flex-1 bg-slate-800 hover:bg-red-600/90 hover:text-white text-white/90 text-center px-4 py-3 rounded-lg transition-all font-bold text-base flex items-center justify-center gap-2 group/btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 
+                                Trailer
+                            </a>
+                            <a href="https://keystudiosdev.itch.io/the-water-odyssey" target="_blank" class="flex-1 bg-slate-800 hover:bg-orange-600/90 hover:text-white text-white/90 text-center px-4 py-3 rounded-lg transition-all font-bold text-base flex items-center justify-center gap-2 group/btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> 
+                                Itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			<!-- Features -->
-				<div id="features-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-6 col-12-medium">
+        <!-- Smaller Projects Header -->
+        <div class="flex items-center gap-4 animate-fade-in" style="animation-delay: 0.2s">
+            <div class="h-px bg-slate-800 flex-1"></div>
+            <h2 id="smaller" class="text-3xl font-display font-bold text-white">Smaller Projects</h2>
+            <div class="h-px bg-slate-800 flex-1"></div>
+        </div>
 
-								<!-- Box -->
-									<section class="box feature">
-										<a class="image featured"><img src="images/pic01.png" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Android Game: GO-ON</h2>
-												<p>Hyper Casual mobile game made with Unity</p>
-											</header>
-											<p>GoOn is an Hyper Casual 2D game for Android. It is a game with 21 diferent levels, developed in Unity Engine.
-											<p></p>
-											I've worked in all aspects of the game, but mainly in programming, game design and visuals.</p>
-											<a href="https://www.youtube.com/watch?v=HK5iRJ4nj-s&ab_channel=MartiMayolas">Gameplay Trailer</a>
-											<p></p>
-											<a href="https://marti-mayolas.itch.io/go-on">Itch.io page</a>
-										</div>
-									</section>
+        <!-- Smaller Projects Grid (3 Columns) -->
+        <section class="animate-fade-in" style="animation-delay: 0.3s">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                
+                <!-- Small Exp 1 -->
+                <div class="bg-slate-900/30 rounded-lg border border-slate-800 p-5 hover:bg-slate-900 transition-colors flex flex-col">
+                    <img src="images/HangedMasters.jpg" alt="Hanged Masters" class="w-full h-40 object-cover rounded-md mb-4 opacity-80 hover:opacity-100 transition-opacity">
+                    <h3 class="font-bold text-white text-xl mb-1">Hanged Masters</h3>
+                    <p class="text-xs text-primary uppercase mb-3">Android Studio App</p>
+                    <p class="text-sm text-slate-400 mb-4 flex-grow">Hangman game with Firebase Auth and Firestore database.</p>
+                </div>
 
-							</div>
-							<div class="col-6 col-12-medium">
+                <!-- Small Exp 2 -->
+                <div class="bg-slate-900/30 rounded-lg border border-slate-800 p-5 hover:bg-slate-900 transition-colors flex flex-col">
+                    <img src="images/castlevania.png" alt="Castlevania JS" class="w-full h-40 object-cover rounded-md mb-4 opacity-80 hover:opacity-100 transition-opacity">
+                    <h3 class="font-bold text-white text-xl mb-1">Castlevania JS</h3>
+                    <p class="text-xs text-primary uppercase mb-3">JavaScript / Phaser</p>
+                    <p class="text-sm text-slate-400 mb-4 flex-grow">Recreation of the first level of Castlevania using Phaser framework.</p>
+                </div>
 
-								<!-- Box -->
-									<section class="box feature">
-										<a class="image featured"><img src="images/pic02.png" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Windows Game: The Water Odyssey</h2>
-												<p>Roguelike game made with Unity</p>
-											</header>
-											<p>The Water Odyssey is an action 3D shooting game, with roguelike and bullet hell mechanics.
-												The development of the project followed Agile methodologies, specifically Scrum with Jira Software.</p>
-											<p>I've worked mainly in Gameplay Design and Programming.</p>
-											<a href="https://youtu.be/E3VorUXMKJU">Gameplay Trailer</a>
-											<p></p>
-											<a href="https://keystudiosdev.itch.io/the-water-odyssey">Itch.io page</a>
+                <!-- Small Exp 3 -->
+                <div class="bg-slate-900/30 rounded-lg border border-slate-800 p-5 hover:bg-slate-900 transition-colors flex flex-col">
+                    <img src="images/unreal.png" alt="UE Shooter" class="w-full h-40 object-cover rounded-md mb-4 opacity-80 hover:opacity-100 transition-opacity">
+                    <h3 class="font-bold text-white text-xl mb-1">UE Simple Shooter</h3>
+                    <p class="text-xs text-primary uppercase mb-3">Unreal Engine 5</p>
+                    <p class="text-sm text-slate-400 mb-4 flex-grow">Small shooter prototype showcasing special attacks.</p>
+                    <a href="https://www.youtube.com/watch?v=141Z0tyyNlU" target="_blank" class="text-sm text-primary hover:underline mt-auto">Watch Gameplay</a>
+                </div>
 
-										</div>
-									</section>
+            </div>
+        </section>
 
-							</div>
-						</div>
-					</div>
-				</div>
-				<br>
-				<br>
+         <!-- Experience Section (Moved to Bottom) -->
+         <section id="experience" class="animate-fade-in" style="animation-delay: 0.4s">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-px bg-slate-800 flex-1"></div>
+                <h2 class="text-3xl font-display font-bold text-white tracking-tight">Experience</h2>
+                <div class="h-px bg-slate-800 flex-1"></div>
+            </div>
 
-				<h2>Smaller Projects</h2>
-				<hr class="section-divider">
-				<div id="features-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-5 col-12-medium">
+            <div class="space-y-4">
+                
+                <div class="flex flex-col gap-1 p-6 rounded-lg bg-slate-900/40 border border-slate-800/50 hover:bg-slate-900/60 transition-colors">
+                    <h4 class="text-xl font-bold text-white">Playable Ads Developer</h4>
+                    <p class="text-base text-slate-400 font-mono">FunPlus</p>
+                </div>
 
-								<!-- Box -->
-									<section class="box feature">
-										<a class="image featured"><img src="images/HangedMasters.jpg" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Android Studio app</h2>
-											</header>
-											<p>A Hangman game made in Android Studio, with Firebase Authentication, cloud saves with Firestore Database, and push notifications.</p>
+                <div class="flex flex-col gap-1 p-6 rounded-lg bg-slate-900/40 border border-slate-800/50 hover:bg-slate-900/60 transition-colors">
+                    <h4 class="text-xl font-bold text-white">Technical Designer Intern</h4>
+                    <p class="text-base text-slate-400 font-mono">Digital Legends Activision</p>
+                </div>
 
-										</div>
-									</section>
+            </div>
+        </section>
 
-							</div>
-							<div class="col-5 col-12-medium">
+    </main>
 
-								<!-- Box -->
-									<section class="box feature">
-										<a class="image featured"><img src="images/pic03.png" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Castelvania in JavaScript</h2>
-											</header>
-											<p>The first level of the original Castelvania recreated. 
-												Developed in JavaScript using Phaser Framework, and following Agile methodologies.</p>
+    <!-- Simple Footer -->
+    <footer class="border-t border-slate-800/50 py-8 mt-8 bg-dark">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-sm text-slate-500">©José Antonio Moreno.</p>
+        </div>
+    </footer>
 
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-6 col-12-medium">
-
-								<!-- Box -->
-									<section class="box feature">
-										<a class="image featured"><img src="images/pic04.png" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Unreal Engine simple Shooter</h2>
-											</header>
-											<p>Small Unreal Engine shooter with special atacks.</p>
-											<a href="https://www.youtube.com/watch?v=141Z0tyyNlU">Gameplay Video</a>
-										</div>
-									</section>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			
-
-	
-		<!-- Scripts -->
-
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<script type="module" src="/index.tsx"></script>
+</body>
 </html>
